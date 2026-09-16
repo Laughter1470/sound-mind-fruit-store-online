@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 42 40% 98%;
+    --foreground: 150 15% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 150 15% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 15% 12%;
+    --primary: 142 55% 30%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 42 40% 94%;
+    --secondary-foreground: 150 15% 12%;
+    --muted: 42 30% 95%;
+    --muted-foreground: 150 8% 45%;
+    --accent: 42 70% 55%;
+    --accent-foreground: 150 15% 12%;
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 42 20% 88%;
+    --input: 42 20% 88%;
+    --ring: 142 55% 30%;
+    --chart-1: 142 55% 30%;
+    --chart-2: 42 70% 55%;
+    --chart-3: 20 75% 55%;
+    --chart-4: 190 60% 45%;
+    --chart-5: 280 50% 55%;
+    --radius: 0.75rem;
+  }
+  .dark {
+    --background: 150 15% 8%;
+    --foreground: 42 40% 95%;
+    --card: 150 15% 10%;
+    --card-foreground: 42 40% 95%;
+    --popover: 150 15% 10%;
+    --popover-foreground: 42 40% 95%;
+    --primary: 142 45% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 150 10% 16%;
+    --secondary-foreground: 42 40% 95%;
+    --muted: 150 10% 16%;
+    --muted-foreground: 42 15% 60%;
+    --accent: 42 60% 45%;
+    --accent-foreground: 42 40% 95%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 150 10% 20%;
+    --input: 150 10% 20%;
+    --ring: 142 45% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fade-up 0.6s ease-out both;
+  }
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out both;
+  }
+  .animate-scale-in {
+    animation: scale-in 0.3s ease-out both;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
